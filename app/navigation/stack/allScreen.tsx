@@ -1,10 +1,8 @@
 
-import { Home } from '@/app/screen/Home';
+import { Home } from '@/app/navigation/tab/Home';
 import MainLayout from '@/components/MainLayout';
-import Fontisto from '@expo/vector-icons/Fontisto';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Text, View } from 'react-native';
 
 
 //this is the root stack param list which tranfer the another data 
@@ -25,22 +23,12 @@ const Allscreen = () => {
     <MainLayout>
       <Stack.Navigator initialRouteName={"Home"} screenOptions={{
         headerShown: true,
-        headerStyle: { backgroundColor: "#999921" },
-        headerTintColor: "#fff",
-        headerTitleStyle: { fontWeight: "bold" },
-        headerTitleAlign: "center",
+        // headerStyle: { backgroundColor: "#999921" },
+        // headerTintColor: "#fff",
+        // headerTitleStyle: { fontWeight: "bold" },
+        // headerTitleAlign: "center",
       }}>
-        <Stack.Screen name="Home" component={Home} options={{
-         // this is used to customize the header of the screen
-         header: () =>
-          (
-            <View style={{ flexDirection: "row", alignItems: "center", justifyContent: "space-between", paddingHorizontal: 20 }}>
-              <Fontisto name="home" size={24} color="black" />
-              <Text style={{ color: "black", fontSize: 20 }}>Home</Text>
-              <Fontisto name="checkbox-passive" size={10} color="black" />
-            </View>
-          )
-        }} />
+        <Stack.Screen name="Home" component={Home} />
         {/* <Stack.Screen name="About" component={About} />
         <Stack.Screen name="Detialform" component={Detialform} options={({route})=>({
             title: route.params.name,
