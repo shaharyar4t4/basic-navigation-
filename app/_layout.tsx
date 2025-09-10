@@ -1,9 +1,17 @@
-import React from 'react'
-import { Text, View } from 'react-native'
+import Allscreen from "./navigation/stack/allScreen";
 
-export const _layout = () => {
-  return (
-    <View>
-      <Text>Hello</Text>
-    </View>)
+
+
+export default function RootLayout() {
+
+   return (
+      // <Class1/>
+      // <Class2/>
+      // <List/>
+      // <Allscreen/>
+      // <TabScreen/>
+      // <DrawerScreen/>
+      <Allscreen/>
+   );
+
 }
