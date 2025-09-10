@@ -22,7 +22,7 @@ const SplashScreen = ({ navigation }: PropsType) => {
 
         // Navigate after 3 seconds
         const timer = setTimeout(() => {
-            navigation.replace("Home"); // Replace with your screen name
+            navigation.replace("LoginScreen"); // Replace with your screen name
         }, 3000);
 
         return () => clearTimeout(timer);

@@ -1,15 +1,15 @@
 
+import LoginScreen from '@/app/screen/LoginScreen';
 import SplashScreen from '@/app/screen/SplashScreen';
 import MainLayout from '@/components/MainLayout';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Home } from '../tab/Home';
 
 
 //this is the root stack param list which tranfer the another data 
 export type RootStackParamList = {
   SplashScreen: undefined;
-  Home: undefined;
+  LoginScreen: undefined;
   
 //   About: undefined;
 //   Detialform: { id: string; name: string };
@@ -32,7 +32,7 @@ const Allscreen = () => {
         // headerTitleAlign: "center",
       }}>
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
         {/* <Stack.Screen name="About" component={About} />
         <Stack.Screen name="Detialform" component={Detialform} options={({route})=>({
             title: route.params.name,
