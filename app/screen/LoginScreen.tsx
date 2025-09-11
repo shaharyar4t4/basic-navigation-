@@ -1,7 +1,11 @@
-import React from 'react'
-import { StyleSheet, Text, TextInput, View } from 'react-native'
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import React from 'react';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { RootStackParamList } from '../navigation/stack/allScreen';
 
-const LoginScreen = () => {
+type PropsType = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
+
+const LoginScreen = ({navigation}: PropsType) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.container}>
@@ -20,6 +24,22 @@ const LoginScreen = () => {
         // onChangeText={text => setInputText(text)}
         // value={inputText}
       />
+       <TextInput
+        style={styles.input}
+        placeholder="Password"
+        // onChangeText={text => setInputText(text)}
+        // value={inputText}
+      />
+      <TouchableOpacity style={styles.btn}>
+        <Text style={styles.btntxt}>Log In</Text>
+      </TouchableOpacity>
+
+      <View style={{flexDirection:"row", gap:5, marginTop:15}}>
+        <Text style={styles.siguptxt}>Do you Want to</Text>
+        <TouchableOpacity onPress={()=>{navigation.navigate("SigupScreen")}}>
+        <Text style={styles.siguptxts}>Sign Up</Text>
+        </TouchableOpacity>
+      </View>
       </View>
     </View>
   )
@@ -42,7 +62,7 @@ const styles = StyleSheet.create({
   textContainer: {
     fontSize: 40,
     color: "#fff",
-    fontFamily: "Popins-medium",
+    fontFamily: "Popins-Medium",
   },
   inputContainer: {
     width: "90%",
@@ -56,23 +76,47 @@ const styles = StyleSheet.create({
   },
   inputContainertxt: {
     flexDirection: "row",
-    alignSelf: "center",
     gap: 6,
   },
   txt: {
-    fontFamily: "Popins-medium",
+    fontFamily: "Popins-Medium",
     color: "#447055",
     fontSize: 30,
     marginTop: 20,
+    marginBottom: 20,
     fontWeight: "bold",
   }, 
    input: {
-    height: 40,
+    height: 50,
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 10,
     width: '80%',
     paddingHorizontal: 10,
-    marginBottom: 20,
+    marginBottom: 15,
   },
+ btn: {
+  marginTop: 12,
+  width: "80%",
+  height: 45,
+  backgroundColor: "#447055",
+  borderRadius: 25,
+  justifyContent: "center", 
+  alignItems: "center",     
+},
+  btntxt:{
+    color:"#fff",
+    fontSize:18,
+    textAlign:"center",
+    marginTop:5,
+    fontFamily: "Popins-Medium",
+  },
+  siguptxt:{
+    color:"#447055",
+  },
+  siguptxts:{
+        color:"#447055",
+        textDecorationLine:"underline",
+        fontWeight:"bold",
+  }
 })

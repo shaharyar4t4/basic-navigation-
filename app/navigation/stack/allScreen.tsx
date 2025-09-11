@@ -1,5 +1,6 @@
 
 import LoginScreen from '@/app/screen/LoginScreen';
+import SigupScreen from '@/app/screen/SigupScreen';
 import SplashScreen from '@/app/screen/SplashScreen';
 import MainLayout from '@/components/MainLayout';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -10,6 +11,7 @@ import React from 'react';
 export type RootStackParamList = {
   SplashScreen: undefined;
   LoginScreen: undefined;
+  SigupScreen: undefined;
   
 //   About: undefined;
 //   Detialform: { id: string; name: string };
@@ -33,6 +35,7 @@ const Allscreen = () => {
       }}>
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        <Stack.Screen name="SigupScreen" component={SigupScreen} />
         {/* <Stack.Screen name="About" component={About} />
         <Stack.Screen name="Detialform" component={Detialform} options={({route})=>({
             title: route.params.name,
