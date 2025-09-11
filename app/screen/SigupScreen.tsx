@@ -9,7 +9,7 @@ const SigupScreen = ({navigation}: PropsType) => {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.container}>
-        <Text style={styles.textContainer}>Wellcome</Text>
+        <Text style={styles.textContainer}>Create your Account</Text>
       </View>
 
       <View style={styles.inputContainer}>
@@ -17,6 +17,12 @@ const SigupScreen = ({navigation}: PropsType) => {
           <Text style={styles.txt}>Sign </Text>
           <Text style={styles.txt}>Up</Text>
         </View>
+        <TextInput
+        style={styles.input}
+        placeholder="Full Name"
+        // onChangeText={text => setInputText(text)}
+        // value={inputText}
+      />
 
         <TextInput
         style={styles.input}
@@ -33,7 +39,13 @@ const SigupScreen = ({navigation}: PropsType) => {
       <TouchableOpacity style={styles.btn}>
         <Text style={styles.btntxt}>Sign Up</Text>
       </TouchableOpacity>
+      <View style={{flexDirection:"row", gap:5, marginTop:15}}>
+         <Text style={styles.siguptxt}>Back to</Text>
+        <TouchableOpacity onPress={()=>{navigation.navigate("LoginScreen")}}>
+        <Text style={styles.siguptxts}>Log In</Text>
+        </TouchableOpacity>
       </View>
+    </View>
     </View>
   )
 }
@@ -53,7 +65,7 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   textContainer: {
-    fontSize: 40,
+    fontSize: 30,
     color: "#fff",
     fontFamily: "Popins-Medium",
   },
@@ -89,7 +101,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
  btn: {
-  marginTop: 12,
+  marginTop: 9,
   width: "80%",
   height: 45,
   backgroundColor: "#447055",
@@ -103,5 +115,13 @@ const styles = StyleSheet.create({
     textAlign:"center",
     marginTop:5,
     fontFamily: "Popins-Medium",
+  },
+  siguptxt:{
+    color:"#447055",
+  },
+  siguptxts:{
+        color:"#447055",
+        textDecorationLine:"underline",
+        fontWeight:"bold",
   }
 })
