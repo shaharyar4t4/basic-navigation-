@@ -1,6 +1,6 @@
 import MainLayout from '@/components/MainLayout';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 // import { RootStackParamList } from '../navigation/stack/allScreen';
 
 
@@ -9,7 +9,7 @@ import { Text, View } from 'react-native';
 export const Profile = () => {
   return (
     <MainLayout>
-            <View>
+            <View style={styles.container}>
                 <Text>Profile Screen</Text>
             </View>
 
@@ -18,3 +18,12 @@ export const Profile = () => {
 }
 
 export default Profile
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+});

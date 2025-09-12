@@ -1,15 +1,14 @@
 import MainLayout from '@/components/MainLayout';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 // import { RootStackParamList } from '../navigation/stack/allScreen';
 
 
-// type PropsType = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 export const About = () => {
   return (
     <MainLayout>
-            <View>
+            <View style={styles.container}>
                 <Text>About Screen</Text>
             </View>
 
@@ -17,3 +16,12 @@ export const About = () => {
   )
 }
 export default About
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+});

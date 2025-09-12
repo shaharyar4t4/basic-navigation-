@@ -1,13 +1,10 @@
 import MainLayout from '@/components/MainLayout';
 
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { RootTabParamList } from './TabScreen';
 
-type PropsType = NativeStackScreenProps<RootTabParamList, 'Home'>;
 
-export const Home = ({navigation}: PropsType) => {
+export const Home = () => {
   return (
     <MainLayout>
             <View style={styles.container}>
