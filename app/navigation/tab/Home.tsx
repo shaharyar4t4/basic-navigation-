@@ -1,18 +1,30 @@
 import MainLayout from '@/components/MainLayout';
+
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import React from 'react';
-import { Text, View } from 'react-native';
-// import { RootStackParamList } from '../navigation/stack/allScreen';
+import { StyleSheet, Text, View } from 'react-native';
+import { RootTabParamList } from './TabScreen';
 
+type PropsType = NativeStackScreenProps<RootTabParamList, 'Home'>;
 
-// type PropsType = NativeStackScreenProps<RootStackParamList, 'Home'>;
-
-export const Home = () => {
+export const Home = ({navigation}: PropsType) => {
   return (
     <MainLayout>
-            <View>
+            <View style={styles.container}>
                 <Text>Home Screen</Text>
             </View>
 
     </MainLayout>
   )
 }
+
+export default Home
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+});

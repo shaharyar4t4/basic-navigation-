@@ -36,15 +36,9 @@ const SigupScreen = ({navigation}: PropsType) => {
         // onChangeText={text => setInputText(text)}
         // value={inputText}
       />
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={styles.btn} onPress={()=>{navigation.navigate("LoginScreen")}}>
         <Text style={styles.btntxt}>Sign Up</Text>
       </TouchableOpacity>
-      <View style={{flexDirection:"row", gap:5, marginTop:15}}>
-         <Text style={styles.siguptxt}>Back to</Text>
-        <TouchableOpacity onPress={()=>{navigation.navigate("LoginScreen")}}>
-        <Text style={styles.siguptxts}>Log In</Text>
-        </TouchableOpacity>
-      </View>
     </View>
     </View>
   )

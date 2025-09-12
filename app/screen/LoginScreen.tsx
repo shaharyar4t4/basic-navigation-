@@ -30,7 +30,7 @@ const LoginScreen = ({navigation}: PropsType) => {
         // onChangeText={text => setInputText(text)}
         // value={inputText}
       />
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity style={styles.btn} onPress={()=>{navigation.navigate("TabScreen")}}>
         <Text style={styles.btntxt}>Log In</Text>
       </TouchableOpacity>
 
